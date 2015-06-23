@@ -36,3 +36,7 @@ _plugins:
 # _internal:
 #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #    prefix:   /_internal
+
+blog:
+    resource: "@BlogBundle/Resources/config/routing.yml"
+    prefix:  /

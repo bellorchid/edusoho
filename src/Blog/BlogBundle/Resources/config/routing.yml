@@ -2,3 +2,19 @@
 blog_index:
     pattern: /blogs
     defaults: {_controller:BlogBundle:Blog:showBlog}
+
+blog_show:
+    pattern: /blog/{id}
+    defaults: {_controller:BlogBundle:Blog:blogDetail}
+
+blog_add:
+    pattern: /blog/add
+    defaults: {_controller:BlogBundle:Blog:newBlog}
+
+blog_edit:
+    pattern: /blog/{id}/edit
+    defaults: {_controller:BlogBundle:Blog:editBlog}
+
+blog_delete:
+    pattern: /blog/{id}/delete
+    defaults: {_controller:BlogBundle:Blog:deleteBlog}

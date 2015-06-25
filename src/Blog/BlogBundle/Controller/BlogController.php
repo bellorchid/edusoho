@@ -7,16 +7,13 @@ class BlogController extends Controller
 {
 	public function showBlogAction()
 	{
-		return new Response("<!DOCTYPE html>
-		<html>
-		<head>
-			<title>zyc</title>
-		</head>
-		<body>
-		<h1></h1>
-		<h1 align = center>This is my Blog</h1>
-		</body>
-		</html>");
+		$blogs = $this->getArticleService()->showBlog();
+		return $this->render('BlogBundle::showList.html.twig', array(
+			'id' => $blogs['id'],
+			'title' => $blogs['title'],
+			'content' => $blogs['content'],
+			'owner' => $blogs['owner'],
+		));
 	}
 
 	public function newBlogAction()
@@ -32,5 +29,10 @@ class BlogController extends Controller
 	public function deleteBlogAction()
 	{
 
+	}
+
+	private function getArticleService()
+	{
+			return $this->getServiceKernel()->createService('Blog.BlogService');
 	}
 }

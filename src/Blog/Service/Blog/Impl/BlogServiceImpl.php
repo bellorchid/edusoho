@@ -12,7 +12,7 @@ class BlogServiceImpl extends BaseService implements BlogService
 {
 	public function showBlog()
 	{
-		
+		return $this->getBlogDao()->getBlogs($id);
 	}
 
 	public function newBlog()
@@ -27,6 +27,11 @@ class BlogServiceImpl extends BaseService implements BlogService
 
 	public function deleteBlog()
 	{
-		
+
+	}
+
+	private function getBlogDao()
+	{
+			return $this->createDao('Blog.BlogDao');
 	}
 }
